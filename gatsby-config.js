@@ -11,6 +11,7 @@ module.exports = {
     title: `Demand Actions`,
     description: `Demand Action`,
     author: `@gatsbyjs`,
+    siteUrl: `https://lucid-borg-01ca72.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -50,7 +51,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-transformer-remark`,
+    { resolve: `gatsby-transformer-remark` },
     `gatsby-plugin-sass`,
   ],
 }
