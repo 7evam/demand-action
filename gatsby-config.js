@@ -39,17 +39,18 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-source-mongodb',
+      resolve: "gatsby-source-mongodb",
       options: {
-          // Name of the database and collection where are books reside
-          connectionString: `mongodb+srv://${USER}:${PW}@${HOST}`,
-          dbName: 'action',
-          collection: 'incidents',
-          extraParams: {
-              ssl: true
-          }
-      }
-  },
-  `gatsby-transformer-remark`
+        // Name of the database and collection where are books reside
+        connectionString: `mongodb+srv://${USER}:${PW}@${HOST}`,
+        dbName: "action",
+        collection: "incidents",
+        extraParams: {
+          ssl: true,
+        },
+      },
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
   ],
 }
