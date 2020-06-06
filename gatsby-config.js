@@ -10,8 +10,7 @@ module.exports = {
   siteMetadata: {
     title: `Demand Actions`,
     description: `Demand Action`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://lucid-borg-01ca72.netlify.app/`,
+    author: `@gatsbyjs`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
