@@ -31,6 +31,8 @@ export const pageQuery = graphql`
           tweetId
           emailMessage
           emailAddress
+          phoneScript
+          phoneNumber
         }
       }
     }

@@ -13,7 +13,9 @@ const IncidentList = (props) => {
         {
         props.incidents.map((incident,index) => 
           <Incident title={incident.node.title} tweetId={incident.node.tweetId} 
-          emailAddress={incident.node.emailAddress} emailMessage={incident.node.emailMessage}/>
+          emailAddress={incident.node.emailAddress} emailMessage={incident.node.emailMessage}
+          phoneScript={incident.node.phoneScript} phoneNumber={incident.node.phoneNumber}
+          />
         )}
     </div>
   )
