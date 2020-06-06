@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import IncidentList from "../components/IncidentList"
-import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -24,16 +23,16 @@ const IndexPage = (props) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-query {
-  allMongodbActionIncidents {
-    edges {
-      node {
-        title
-        tweetId
-        emailMessage
-        emailAddress
+  query {
+    allMongodbActionIncidents {
+      edges {
+        node {
+          title
+          tweetId
+          emailMessage
+          emailAddress
+        }
       }
     }
   }
-}
 `
