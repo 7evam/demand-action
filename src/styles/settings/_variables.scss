@@ -1,0 +1,50 @@
+$screen-s: 320px;
+$screen-m: 720px;
+$screen-l: 1024px;
+$screen-xl: 1440px;
+
+$small-up: 'min-width: #{$screen-s}';
+$small-down: 'max-width: #{$screen-m}';
+$medium-up: 'min-width: #{$screen-m}';
+$medium-down: 'max-width: #{$screen-l}';
+$large-up: 'min-width: #{$screen-l}';
+$large-down: 'max-width: #{$screen-xl}';
+$xlarge-up: 'min-width: #{$screen-xl}';
+
+$transition-duration-ultra-short: .25s;
+$transition-duration-short: 1.5s;
+$transition-duration-med: 2s;
+$transition-duration-mid: 2.5s;
+$transition-duration-long: 3.5s;
+
+$message-height: 46px;
+
+/*------------------------------------*\
+  #MEDIA-QUERY-POINTS
+\*------------------------------------*/
+
+$common-media-query-points: (
+
+  "mobile":           320px,
+
+  "tablet":           720px,
+  "tablet-down":      719px,
+
+  "desktop":          1024px,
+  "desktop-down":     1023px,
+
+  "desktop-max":      1440px,
+  "desktop-max-down": 1439px
+
+);
+
+/*------------------------------------*\
+  #MEDIA-QUERIES
+\*------------------------------------*/
+
+$common-media-queries: (
+  "mobile":      "(min-width: #{map-get($common-media-query-points, 'mobile')})",
+  "tablet":      "(min-width: #{map-get($common-media-query-points, 'tablet')})",
+  "desktop":     "(min-width: #{map-get($common-media-query-points, 'desktop')})",
+  "desktop-max": "(min-width: #{map-get($common-media-query-points, 'desktop-max')})"
+);
