@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
-import { TwitterVideoEmbed } from 'react-twitter-embed'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 
 import {useDispatch} from 'react-redux'
 
@@ -37,16 +37,24 @@ const IncidentList = (props) => {
     props.setModalContent(true)
   }
 
+  console.log('here is props in icn')
+  console.log(props)
+
   return (
     <div className="Incident col-12 md:col-6 my1 ">
       <h1 className="text-center mb1">{props.title}</h1>
       <div className="col-12" id="Incident__embed-wrapper">
-        <TwitterVideoEmbed id={props.tweetId} />
+        {
+          props.incident.twitterIds.length >= 1 ?
+          props.incident.twitterIds.map((tweetId, index) => (
+            <TwitterTweetEmbed tweetId={tweetId} />
+          )) : null
+        }
       </div>
       <div className="Incident__link col-12 flex justify-center my_5">
         <a
           className=""
-          href={`mailto:${props.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.emailMessage}`}
+          href={`mailto:${props.incident.node.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.incident.node.emailMessage}`}
         >
           Open Email
         </a>
@@ -56,6 +64,18 @@ const IncidentList = (props) => {
           : null
         }
       </div>
+
+      {
+          props.incident.links.length >= 1 ?
+          <>
+          <p>Other Links</p>
+          {
+          props.incident.links.map((link, index) => (
+            <a href={link}>{link}</a>
+          )) 
+            }
+          </>: null
+        }
     </div>
   )
 }

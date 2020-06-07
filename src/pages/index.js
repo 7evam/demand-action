@@ -41,6 +41,7 @@ export const pageQuery = graphql`
           emailAddress
           phoneScript
           phoneNumber
+          pb_id
         }
       }
     }

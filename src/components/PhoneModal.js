@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { TwitterVideoEmbed } from 'react-twitter-embed'
 import styled from 'styled-components'
 import {useSelector, useDispatch} from 'react-redux'
 
