@@ -27,7 +27,12 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
-        <p >TODO: add instructions on what this is and how to use it</p>
+        <p className="text-center bold">TODO:</p>
+        <ul className="text-center">
+          <li>
+            add instructions on what this is and how to use it
+          </li>
+        </ul>
         <main>{children}</main>
       </div>
     </>

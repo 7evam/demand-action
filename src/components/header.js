@@ -3,11 +3,9 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className="p2">
-    <h1 className="text-center">
-      <Link to="/">
-        {siteTitle}
-      </Link>
+  <header className="Header p2">
+    <h1 className="Header__headline text-center">
+      <Link to="/">{siteTitle}</Link>
     </h1>
   </header>
 )
