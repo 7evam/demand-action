@@ -27,26 +27,19 @@ const IncidentList = (props) => {
   const [modalContent, setModalContent] = useState(false)
 
   return (
-    <div>
-      {
-        modalContent && modalContent !== null ?
-        <Modal>
-          <PhoneModal setModalContent={setModalContent}/>
-        </Modal>
-        : null
-      }
-        <h1>{props.title}</h1>
-        <TwitterVideoEmbed id={props.tweetId}/>
-        {
-          props.emailMessage ?
-          <a href={`mailto:${props.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.emailMessage}`}>Open Email</a> 
-          : null
-        }
-        {
-          props.phoneScript ?
-          <button onClick={handlePhoneClick}>Click for phone script</button>
-          : null
-        }
+    <div className="Incident col-12 md:col-6 my1 ">
+      <h1 className="text-center mb1">{props.title}</h1>
+      <div className="col-12" id="Incident__embed-wrapper">
+        <TwitterVideoEmbed id={props.tweetId} />
+      </div>
+      <div className="Incident__link col-12 flex justify-center my_5">
+        <a
+          className=""
+          href={`mailto:${props.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.emailMessage}`}
+        >
+          Open Email
+        </a>
+      </div>
     </div>
   )
 }

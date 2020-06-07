@@ -13,8 +13,6 @@ const IndexPage = (props) => {
   return (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi peoples</h1>
-    <p>this is test</p>
     <IncidentList incidents={incidents}/>
   </Layout>
   )

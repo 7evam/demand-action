@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 const IncidentList = (props) => {
 
   return (
-    <div>
+    <div className="col-12 flex items-center justify-center flex-col px2">
         {
         props.incidents.map((incident,index) => 
           <Incident title={incident.node.title} tweetId={incident.node.tweetId} 

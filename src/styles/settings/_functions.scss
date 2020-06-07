@@ -1,0 +1,56 @@
+/*------------------------------------*\
+  #COMMON-BP
+\*------------------------------------*/
+
+@mixin common-bp($point) {
+
+	@media #{map-get($common-media-queries, $point)}{
+		@content;
+	}
+}
+
+@mixin anchor-white {
+  a {
+    text-decoration: none;
+    color:  color('white');
+    height: 100%;
+
+    &:visited {
+      text-decoration: none;
+      color:  color('white');
+    }
+
+    &:active {
+      text-decoration: none;
+      color:  color('white');
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: color('white');
+    }
+  }
+}
+
+@mixin anchor-black {
+  a {
+    text-decoration: none;
+    color:  color('black');
+    height: 100%;
+
+    &:visited {
+      text-decoration: none;
+      color:  color('black');
+    }
+
+    &:active {
+      text-decoration: none;
+      color:  color('black');
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: color('black');
+    }
+  }
+}

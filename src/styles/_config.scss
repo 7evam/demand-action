@@ -1,0 +1,48 @@
+$colors: (
+  'black': #000,
+  'white': #fff,
+);
+
+$breakpoints: (
+  'sm': 320px,
+  'md': 720px,
+  'lg': 1024px,
+  'xl': 1444px
+);
+
+$aspect-ratios:	(
+  'square': (1, 1),
+  'landscape': (16, 9),
+  'portrait': (2, 3),
+  'four-three': (4, 3),
+  'three-four': (3, 4),
+  'five-three': (5, 3)
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@each $color-name, $value in $colors {
+  .color-#{$color-name},
+  .text-#{$color-name} {
+    color: $value;
+  }
+
+  .background-color-#{$color-name},
+  .bg-#{$color-name} {
+    background-color: $value;
+  }
+
+  .border-color-#{$color-name} {
+    border-color: $value;
+  }
+
+  .fill-#{$color-name} {
+    fill: $value;
+  }
+
+  .stroke-#{$color-name} {
+    stroke: $value;
+  }
+}
