@@ -9,10 +9,19 @@ import SEO from "../components/seo"
 const IncidentList = (props) => {
 
   return (
-    <div>
-        <h1>{props.title}</h1>
-        <TwitterVideoEmbed id={props.tweetId}/>
-        <a href={`mailto:${props.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.emailMessage}`}>Open Email</a> 
+    <div className="col-12 md:col-6 my1 flex items-center flex-col">
+      <h1 className="text-center mb1">{props.title}</h1>
+      <div className="col-12">
+        <TwitterVideoEmbed id={props.tweetId} />
+      </div>
+      <div className="col-12 flex items-start">
+        <a
+          className="block my_5"
+          href={`mailto:${props.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.emailMessage}`}
+        >
+          Open Email
+        </a>
+      </div>
     </div>
   )
 }
