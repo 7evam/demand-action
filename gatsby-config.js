@@ -3,17 +3,18 @@ const PW = process.env.MONGO_PW
 const USER = process.env.MONGO_USER
 const HOST = process.env.MONGO_HOST
 
-console.log('hey you see this')
-console.log(USER)
+// console.log('hey you see this')
+// console.log(USER)
 
 module.exports = {
   siteMetadata: {
     title: `Demand Actions`,
     description: `Demand Action`,
-    author: `@gatsbyjs`
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
