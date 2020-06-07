@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import { TwitterVideoEmbed } from 'react-twitter-embed'
+import styled from 'styled-components'
+import {useSelector, useDispatch} from 'react-redux'
 
-import styled from 'styled-componenets'
+
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -16,9 +18,15 @@ const ModalContainer = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10;
 `
 
+
 const PhoneModal = (props) => {
+
+  const {modalInfo} = useSelector(state => ({
+    ...state.modalReducer
+  }))
 
   const handlePhoneClick = () => {
     console.log(props.phoneNumber)
@@ -27,8 +35,8 @@ const PhoneModal = (props) => {
 
   return (
     <ModalContainer>
-        <h1>Call {props.phoneNumber}</h1>
-        <p>{props.phoneScript}</p>
+        <h1>Call {modalInfo.phoneNumber}</h1>
+        <p>{modalInfo.phoneScript}</p>
         <button onClick={() => props.setModalContent(false)}>Close</button>
     </ModalContainer>
   )

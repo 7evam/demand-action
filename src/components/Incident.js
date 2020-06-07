@@ -2,7 +2,9 @@ import React, {useState} from "react"
 import { Link } from "gatsby"
 import { TwitterVideoEmbed } from 'react-twitter-embed'
 
-import styled from 'styled-componenets'
+import {useDispatch} from 'react-redux'
+
+import styled from 'styled-components'
 import PhoneModal from './PhoneModal'
 
 import Layout from "../components/layout"
@@ -11,7 +13,7 @@ import SEO from "../components/seo"
 
 const Modal = styled.aside`
   background-color: grey;
-  z-index: 1;
+  z-index: 10;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -20,11 +22,20 @@ const Modal = styled.aside`
 
 const IncidentList = (props) => {
 
-  const handlePhoneClick = () => {
-    setModalContent(true)
-  }
+  const dispatch = useDispatch()
 
-  const [modalContent, setModalContent] = useState(false)
+  const handlePhoneClick = () => {
+    dispatch({
+      type: "SHOW_MODAL",
+      payload: {
+        modalInfo: {
+          phoneScript: props.phoneScript,
+          phoneNumber: props.phoneNumber
+        }
+      }
+    })
+    props.setModalContent(true)
+  }
 
   return (
     <div className="Incident col-12 md:col-6 my1 ">
@@ -39,6 +50,11 @@ const IncidentList = (props) => {
         >
           Open Email
         </a>
+        {
+          props.phoneScript ?
+          <button onClick={handlePhoneClick}>Open Phone Script</button>
+          : null
+        }
       </div>
     </div>
   )
