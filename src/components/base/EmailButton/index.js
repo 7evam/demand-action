@@ -1,4 +1,3 @@
-// import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
@@ -7,7 +6,7 @@ import "./EmailButton.scss"
 const EmailButton = ({href, message}) => (
   <a
     href={`mailto:${href}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${message}`}
-    className="EmailButton"
+    className="EmailButton text-center"
   >SEND EMAIL</a>
 )
 

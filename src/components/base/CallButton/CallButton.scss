@@ -1,0 +1,16 @@
+@import "../../layout.scss";
+
+.CallButton {
+  width: 140px;
+  border: 2px solid color('dark-grey');
+  background-color: color('white');
+  color: color('dark-grey');
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 10px 16px;
+
+  &:hover {
+    background-color: color('dark-grey');
+    color: color('white');
+  }
+}
