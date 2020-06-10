@@ -1,4 +1,7 @@
 .Incident {
+  border: 2px solid color('dark-grey');
+  padding: 10px;
+
   &__link {
     font-size: 1.5rem;
   }

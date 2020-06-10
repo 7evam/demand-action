@@ -10,6 +10,7 @@ import PhoneModal from './PhoneModal'
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import EmailButton from "../components/base/EmailButton"
 
 const Modal = styled.aside`
   background-color: grey;
@@ -42,7 +43,7 @@ const IncidentList = (props) => {
 
   return (
     <div className="Incident col-12 md:col-6 my1 ">
-      <h1 className="text-center mb1">{props.title}</h1>
+      <h2 className="text-center mb1">{props.title}</h2>
       <div className="col-12" id="Incident__embed-wrapper">
         {
           props.incident && props.incident.twitterIds && props.incident.twitterIds.length >= 1 ?
@@ -52,12 +53,15 @@ const IncidentList = (props) => {
         }
       </div>
       <div className="Incident__link col-12 flex justify-center my_5">
-        <a
+        {/* <a
           className=""
           href={`mailto:${props.incident.node.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.incident.node.emailMessage}`}
         >
           Open Email
-        </a>
+        </a> */}
+
+        <EmailButton href={props.incident.node.emailAddress} message={props.incident.node.emailMessage} />
+
         {
           props.phoneScript ?
           <button onClick={handlePhoneClick}>Open Phone Script</button>
@@ -72,7 +76,7 @@ const IncidentList = (props) => {
           {
           props.incident.links.map((link, index) => (
             <a href={link}>{link}</a>
-          )) 
+          ))
             }
           </>: null
         }

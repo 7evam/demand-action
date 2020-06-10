@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={"Demand Action"} />
       <div className="Layout px2">
         <p className="Layout__paragraph  text-center">
           Many people have been horrified by the display of police brutality all
