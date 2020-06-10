@@ -60,7 +60,7 @@ const IncidentList = (props) => {
         props.incident.twitterIds &&
         props.incident.twitterIds.length >= 1
           ? props.incident.twitterIds.map((tweetId, index) => (
-              <TwitterTweetEmbed tweetId={tweetId} />
+              <TwitterTweetEmbed key={index} tweetId={tweetId} />
             ))
           : null}
       </div>

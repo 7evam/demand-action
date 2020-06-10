@@ -65,7 +65,7 @@ const IncidentList = (props) => {
     <div className="col-12 flex items-center justify-center flex-col">
         {
         incidents.map((incident,index) =>
-          <Incident title={incident.node.title} tweetId={incident.node.tweetId}
+          <Incident key={index} title={incident.node.title} tweetId={incident.node.tweetId}
           emailAddress={incident.node.emailAddress} emailMessage={incident.node.emailMessage}
           phoneScript={incident.node.phoneScript} phoneNumber={incident.node.phoneNumber}
           setModalContent={props.setModalContent} incident={incident}
