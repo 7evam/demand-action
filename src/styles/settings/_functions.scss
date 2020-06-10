@@ -54,3 +54,26 @@
     }
   }
 }
+
+@mixin anchor-dark-grey {
+  a {
+    text-decoration: none;
+    color:  color('dark-grey');
+    height: 100%;
+
+    &:visited {
+      text-decoration: none;
+      color:  color('dark-grey');
+    }
+
+    &:active {
+      text-decoration: none;
+      color:  color('dark-grey');
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: color('dark-grey');
+    }
+  }
+}
