@@ -6,7 +6,7 @@ import "./EmailButton.scss"
 const EmailButton = ({href, message}) => (
   <a
     href={`mailto:${href}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${message}`}
-    className="EmailButton text-center"
+    className="EmailButton text-center block"
   >SEND EMAIL</a>
 )
 

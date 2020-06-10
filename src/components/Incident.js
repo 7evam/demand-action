@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
 import { TwitterTweetEmbed } from 'react-twitter-embed'
+import cx from "classnames"
 
 import {useDispatch} from 'react-redux'
 
@@ -55,32 +56,43 @@ const IncidentList = (props) => {
     <div className="Incident col-12 md:col-6 my1 ">
       <h2 className="mb1">{props.title}</h2>
       <div className="col-12" id="Incident__embed-wrapper">
-        {
-          props.incident && props.incident.twitterIds && props.incident.twitterIds.length >= 1 ?
-          props.incident.twitterIds.map((tweetId, index) => (
-            <TwitterTweetEmbed tweetId={tweetId} />
-          )) : null
-        }
+        {props.incident &&
+        props.incident.twitterIds &&
+        props.incident.twitterIds.length >= 1
+          ? props.incident.twitterIds.map((tweetId, index) => (
+              <TwitterTweetEmbed tweetId={tweetId} />
+            ))
+          : null}
       </div>
-      <div className="Incident__link col-12 flex justify-between my_5">
+      <div className="Incident__link col-12 flex justify-center my_5">
+        <div
+          className={cx({ 'mr_5': callButtonMarkup !== null }) }
+        >
+          {callButtonMarkup}
+        </div>
 
-        {callButtonMarkup}
-
-        <EmailButton href={props.incident.node.emailAddress} message={props.incident.node.emailMessage} />
-
+        <div className="ml_5">
+          <EmailButton
+            href={props.incident.node.emailAddress}
+            message={props.incident.node.emailMessage}
+          />
+        </div>
       </div>
 
-      {
-          props.incident && props.incident.links && props.incident.links.length >= 1 ?
-          <>
-          <p>Other Links</p>
-          {
-          props.incident.links.map((link, index) => (
-            <a href={link}>{link}</a>
-          ))
-            }
-          </>: null
-        }
+      {props.incident &&
+      props.incident.links &&
+      props.incident.links.length >= 1 ? (
+        <>
+          <p>Other Links:</p>
+          <ul>
+            {props.incident.links.map((link, index) => (
+              <li key={index}>
+                <a href={link}>link {index + 1}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
     </div>
   )
 }
