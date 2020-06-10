@@ -11,6 +11,9 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+import EmailButton from "../components/base/EmailButton"
+import CallButton from "../components/base/CallButton"
+
 const Modal = styled.aside`
   background-color: grey;
   z-index: 10;
@@ -40,9 +43,17 @@ const IncidentList = (props) => {
   console.log('here is props in icn')
   console.log(props)
 
+  let callButtonMarkup;
+
+  if (props.phoneScript) {
+    callButtonMarkup = <CallButton handlePhoneClick={handlePhoneClick} />;
+  } else {
+    callButtonMarkup = null;
+  }
+
   return (
     <div className="Incident col-12 md:col-6 my1 ">
-      <h1 className="text-center mb1">{props.title}</h1>
+      <h2 className="mb1">{props.title}</h2>
       <div className="col-12" id="Incident__embed-wrapper">
         {
           props.incident && props.incident.twitterIds && props.incident.twitterIds.length >= 1 ?
@@ -51,18 +62,12 @@ const IncidentList = (props) => {
           )) : null
         }
       </div>
-      <div className="Incident__link col-12 flex justify-center my_5">
-        <a
-          className=""
-          href={`mailto:${props.incident.node.emailAddress}?subject=Example%20Of%20Unnecessary%20Police%20Force&body=${props.incident.node.emailMessage}`}
-        >
-          Open Email
-        </a>
-        {
-          props.phoneScript ?
-          <button onClick={handlePhoneClick}>Open Phone Script</button>
-          : null
-        }
+      <div className="Incident__link col-12 flex justify-between my_5">
+
+        {callButtonMarkup}
+
+        <EmailButton href={props.incident.node.emailAddress} message={props.incident.node.emailMessage} />
+
       </div>
 
       {
@@ -72,7 +77,7 @@ const IncidentList = (props) => {
           {
           props.incident.links.map((link, index) => (
             <a href={link}>{link}</a>
-          )) 
+          ))
             }
           </>: null
         }

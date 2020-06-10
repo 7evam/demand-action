@@ -1,0 +1,17 @@
+@import "../../layout.scss";
+
+.EmailButton {
+  width: 140px;
+  border: 2px solid color('dark-grey');
+  background-color: color('dark-grey');
+  color: color('white');
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 16px;
+
+  &:hover {
+    background-color: color('white');
+    color: color('dark-grey');
+  }
+}

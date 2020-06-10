@@ -36,7 +36,9 @@ const PhoneModal = (props) => {
     <ModalContainer>
         <h1>Call {modalInfo.phoneNumber}</h1>
         <p>{modalInfo.phoneScript}</p>
-        <button onClick={() => props.setModalContent(false)}>Close</button>
+        <button onClick={() => props.setModalContent(false)}>
+          &times;
+        </button>
     </ModalContainer>
   )
 }
