@@ -45,7 +45,7 @@ const IncidentList = (props) => {
       <h1 className="text-center mb1">{props.title}</h1>
       <div className="col-12" id="Incident__embed-wrapper">
         {
-          props.incident.twitterIds.length >= 1 ?
+          props.incident && props.incident.twitterIds && props.incident.twitterIds.length >= 1 ?
           props.incident.twitterIds.map((tweetId, index) => (
             <TwitterTweetEmbed tweetId={tweetId} />
           )) : null
@@ -66,7 +66,7 @@ const IncidentList = (props) => {
       </div>
 
       {
-          props.incident.links.length >= 1 ?
+          props.incident && props.incident.links && props.incident.links.length >= 1 ?
           <>
           <p>Other Links</p>
           {
