@@ -4,7 +4,7 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header className="Header p2">
-    <h1 className="Header__headline text-center">
+    <h1 className="Header__headline text-center color-dark-grey">
       <Link to="/">{siteTitle}</Link>
     </h1>
   </header>

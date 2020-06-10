@@ -27,13 +27,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
-        {/* <p className="text-center bold">TODO:</p> */}
-        <ul className="text-center">
-          <li className="text-center">
-            Many people have been horrified by the display of police brutality all accross the country these last few weeks but most elected officials apallingly don't even know what's going on. Demand them all to acknowledge reality and defund the police without spending hours of your own time by using these pre-written email templates or calling them with these phone scripts.
-          </li>
-        </ul>
+      <div className="Layout px2">
+        <p className="Layout__paragraph  text-center">
+          Many people have been horrified by the display of police brutality all
+          accross the country these last few weeks but most elected officials
+          apallingly don't even know what's going on. Demand them all to
+          acknowledge reality and defund the police without spending hours of
+          your own time by using these pre-written email templates or calling
+          them with these phone scripts.
+        </p>
         <main>{children}</main>
       </div>
     </>

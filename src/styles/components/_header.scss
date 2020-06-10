@@ -1,9 +1,10 @@
 .Header {
 
-  @include anchor-black;
+  @include anchor-dark-grey;
 
   &__headline {
-    font-size: 2rem;
+    font-size: 48px;
+
   }
 
 }
