@@ -1,6 +1,7 @@
 @import "../../layout.scss";
 
 .CallButton {
+  cursor: pointer;
   width: 140px;
   border: 2px solid color('dark-grey');
   background-color: color('white');

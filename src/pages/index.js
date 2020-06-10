@@ -10,21 +10,18 @@ import SEO from "../components/seo"
 const IndexPage = (props) => {
 
   const [modalContent, setModalContent] = useState(false)
-
   const incidents = props.data.allMongodbActionIncidents.edges;
-  
+
   return (
     <>
-    {
-      modalContent && modalContent !== null ?
-      <PhoneModal setModalContent={setModalContent}/>
-      : null
-    }
-  <Layout>
-    <SEO title="Home" />
-    <IncidentList incidents={incidents} setModalContent={setModalContent}/>
-  </Layout>
-  </>
+      {modalContent && modalContent !== null ? (
+        <PhoneModal setModalContent={setModalContent} />
+      ) : null}
+      <Layout>
+        <SEO title="Home" />
+        <IncidentList incidents={incidents} setModalContent={setModalContent} />
+      </Layout>
+    </>
   )
 }
 

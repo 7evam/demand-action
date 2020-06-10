@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={"Demand Action"} />
-      <div className="Layout px2">
+      <div className="Layout px2 raleway">
         <p className="Layout__paragraph  text-center">
           Many people have been horrified by the display of police brutality all
           accross the country these last few weeks but most elected officials

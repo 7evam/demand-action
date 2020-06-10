@@ -1,0 +1,13 @@
+.PhoneModal {
+  background-color: color('white');
+  color: color('dark-grey');
+  border: 2px solid color('dark-grey');
+  padding: 1rem;
+  position: absolute;
+  min-width: 640px;
+  max-width: 900px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
