@@ -54,7 +54,7 @@ const IncidentList = (props) => {
 
   return (
     <div className="Incident col-12 md:col-6 my1 ">
-      <h2 className="mb1">{props.title}</h2>
+      <h2 className="Incident__headline mb1">{props.title}</h2>
       <div className="col-12" id="Incident__embed-wrapper">
         {props.incident &&
         props.incident.twitterIds &&
@@ -65,9 +65,7 @@ const IncidentList = (props) => {
           : null}
       </div>
       <div className="Incident__link col-12 flex justify-center my_5">
-        <div
-          className={cx({ 'mr_5': callButtonMarkup !== null }) }
-        >
+        <div className={cx({ mr_5: callButtonMarkup !== null })}>
           {callButtonMarkup}
         </div>
 

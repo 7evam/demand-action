@@ -1,13 +1,33 @@
 .PhoneModal {
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // margin: 0 2rem;
+
+  padding: 1rem;
   background-color: color('white');
   color: color('dark-grey');
   border: 2px solid color('dark-grey');
-  padding: 1rem;
-  position: absolute;
-  min-width: 640px;
-  max-width: 900px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+
+  // min-width: 640px;
+  // max-width: 900px;
+
   z-index: 10;
+  width: calc(100% - 4rem);
+  height: 500px;
+  overflow-y: scroll;
+
+  @include common-bp (tablet) {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    overflow: unset;
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 40px;
+  }
 }
