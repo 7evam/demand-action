@@ -21,10 +21,14 @@ const PhoneModal = (props) => {
       <div onClick={() => props.setModalContent(false)}>
         <ModalOverlay />
       </div>
-      <div class="PhoneModal">
-        <button onClick={() => props.setModalContent(false)}>&times;</button>
-        <h1>Call {modalInfo.phoneNumber}</h1>
-        <p>{modalInfo.phoneScript}</p>
+      <div className="PhoneModal raleway">
+        <div className="PhoneModal__button-container flex items-end justify-end col-12 mb1">
+          <button className="PhoneModal__button"  onClick={() => props.setModalContent(false)}>&times;</button>
+        </div>
+        <h2 className="PhoneModal__headline mb1">
+          Call {modalInfo.phoneNumber}
+        </h2>
+        <p className="PhoneModal__paragraph">{modalInfo.phoneScript}</p>
       </div>
     </div>
   )
