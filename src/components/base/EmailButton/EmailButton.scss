@@ -1,14 +1,20 @@
 @import "../../layout.scss";
 
 .EmailButton {
-  width: 140px;
+  width: 110px;
   border: 2px solid color('dark-grey');
   background-color: color('dark-grey');
   color: color('white');
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
-  padding: 10px 16px;
+  padding: 5px 8px;
+
+  @include common-bp(tablet) {
+    font-size: 14px;
+    width: 140px;
+    padding: 10px 16px;
+  }
 
   &:hover {
     background-color: color('white');
