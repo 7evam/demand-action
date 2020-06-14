@@ -32,9 +32,7 @@ const Layout = ({ children }) => {
           Many people have been horrified by the display of police brutality all
           accross the country these last few weeks but most elected officials
           apallingly don't even know what's going on. Demand them all to
-          acknowledge reality and defund the police without spending hours of
-          your own time by using these pre-written email templates or calling
-          them with these phone scripts.
+          acknowledge reality and defund the police by using these pre-written email templates and phone scripts.
         </p>
         <main>{children}</main>
       </div>
