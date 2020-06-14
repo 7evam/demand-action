@@ -1,4 +1,4 @@
-## Quick Start
+## To run this repo locally
   - Clone this Repo
   - Yarn Install (must use yarn)
   - Add your environment variables

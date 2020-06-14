@@ -57,6 +57,7 @@ const IncidentList = (props) => {
     let transformedData = transformData();
     let combinedData = combineData()
     setIncidents(combinedData)
+    setSelectedIncidents(combinedData)
 
     let locationList = []
     let location = ""
@@ -75,26 +76,31 @@ const IncidentList = (props) => {
   }, [])
 
   useEffect(() => {
-    if(selectedLocation === "") setSelectedIncidents(incidents)
-    let newIncidents = incidents.filter(incident => `${incident.city}, ${incident.state}` === selectedLocation)
-    setSelectedIncidents(newIncidents)
+    if(selectedLocation === ""){
+      setSelectedIncidents(incidents)
+    } else {
+      let newIncidents = incidents.filter(incident => `${incident.city}, ${incident.state}` === selectedLocation)
+      setSelectedIncidents(newIncidents)
+    }
   }, [selectedLocation])
 
+  console.log('selected incidents')
+  console.log(selectedIncidents)
 
   return (
     <div className="col-12 flex items-center justify-center flex-col">
       <select onChange={(e) => setSelectedLocation(e.target.value)}>
       <option value="">All</option>
         {
-          locations.map(location => (
-          <option value={location}>{location}</option>
+          locations.map((location, index) => (
+          <option key={index} value={location}>{location}</option>
           ))
           
         }
         
       </select>
         {
-        incidents.map((incident,index) =>
+        selectedIncidents.map((incident,index) =>
           <Incident key={index} title={incident.node.title} tweetId={incident.node.tweetId}
           emailAddress={incident.node.emailAddress} emailMessage={incident.node.emailMessage}
           phoneScript={incident.node.phoneScript} phoneNumber={incident.node.phoneNumber}

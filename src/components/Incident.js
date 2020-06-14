@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { Link } from "gatsby"
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import cx from "classnames"
@@ -52,6 +52,13 @@ const IncidentList = (props) => {
     callButtonMarkup = null;
   }
 
+  useEffect(() => {
+    
+  }, [props])
+
+  console.log('twitter Ids')
+  console.log(props.incident.twitterIds)
+
   return (
     <div className="Incident col-12 md:col-6 my1 ">
       <h2 className="Incident__headline mb1">{props.title}</h2>
@@ -60,7 +67,7 @@ const IncidentList = (props) => {
         props.incident.twitterIds &&
         props.incident.twitterIds.length >= 1
           ? props.incident.twitterIds.map((tweetId, index) => (
-              <TwitterTweetEmbed key={index} tweetId={tweetId} />
+              <TwitterTweetEmbed key={tweetId} tweetId={tweetId} />
             ))
           : null}
       </div>
