@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link } from "gatsby"
 import {useSelector, useDispatch} from 'react-redux'
 
@@ -15,6 +15,13 @@ const PhoneModal = (props) => {
     console.log(props.phoneNumber)
     console.log(props.phoneScript)
   }
+
+  // format phone script
+  useEffect(() => {
+    let formatted = modalInfo.phoneScript.replace(/BREAK/, <br/>);
+    modalInfo.phoneScript = formatted
+  }, [])
+
 
   return (
     <div>

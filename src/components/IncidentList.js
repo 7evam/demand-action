@@ -11,6 +11,9 @@ import SEO from "../components/seo"
 const IncidentList = (props) => {
 
   const [incidents, setIncidents] = useState([])
+  const [selectedIncidents, setSelectedIncidents] = useState([])
+  const [locations, setLocations] = useState([])
+  const [selectedLocation, setSelectedLocation] = useState("")
 
   const updateData = async () => {
     const response = await fetchIncidents()
@@ -53,16 +56,43 @@ const IncidentList = (props) => {
 
     let transformedData = transformData();
     let combinedData = combineData()
-    console.log(combinedData)
     setIncidents(combinedData)
+
+    let locationList = []
+    let location = ""
+
+    combinedData.forEach(incident => {
+      location = `${incident.city}, ${incident.state}`
+      if(!locationList.includes(location)){
+        locationList.push(location)
+      }
+    })
+    setLocations(locationList)
   }
 
   useEffect(() => {
     updateData()
   }, [])
 
+  useEffect(() => {
+    if(selectedLocation === "") setSelectedIncidents(incidents)
+    let newIncidents = incidents.filter(incident => `${incident.city}, ${incident.state}` === selectedLocation)
+    setSelectedIncidents(newIncidents)
+  }, [selectedLocation])
+
+
   return (
     <div className="col-12 flex items-center justify-center flex-col">
+      <select onChange={(e) => setSelectedLocation(e.target.value)}>
+      <option value="">All</option>
+        {
+          locations.map(location => (
+          <option value={location}>{location}</option>
+          ))
+          
+        }
+        
+      </select>
         {
         incidents.map((incident,index) =>
           <Incident key={index} title={incident.node.title} tweetId={incident.node.tweetId}
